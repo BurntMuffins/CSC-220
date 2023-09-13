@@ -3,7 +3,7 @@ package Programs.Program1;
 /**
  * Name: Aidan Schaubhut
  * Date: 9/11/2013
- * Description: A program that uses classes tp create a person and student class
+ * Description: A program that uses classes tO create a person class and student subclass
  */
  
 /** Creates the super class called Person with input of name and age */
@@ -26,10 +26,12 @@ class Person {
 
   /* Functions */
 
+  // Adds 1 to the person's age
   public void birthday(){
     this.age++;
   }
 
+  // Returns a string that can be used to tell the user the person's age and student status
   public String toString(){
     String result = "";
 
@@ -49,6 +51,8 @@ class Person {
 /** Creates the subclass called Student with input name and age */
 class Student extends Person {
 
+  /* Constructors */
+
   public Student(String name, int age){
     super(name, age);
     this.isStudent = true;
@@ -66,6 +70,6 @@ public class Main {
 
     Person person = new Person("Rob", 22);
     System.out.println(person);
-    
+
   }
 }
