@@ -3,7 +3,7 @@ package Programs.Program1;
 /**
  * Name: Aidan Schaubhut
  * Date: 9/11/2013
- * Description: A program that uses classes tO create a person class and student subclass
+ * Description: A program that uses classes to create a person class and student subclass
  */
  
 /** Creates the super class called Person with input of name and age */
