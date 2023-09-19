@@ -4,12 +4,12 @@ class Sidekick{
 
 }
 
-/** This class descriebes a cool
+/** This class describes a cool
  * superhero
  */
 
 public class PotatoDog {
-    /** an array of auper powers */
+    /** an array of super powers */
     public String[] superPowers;
 
     /** Their sidekick */
