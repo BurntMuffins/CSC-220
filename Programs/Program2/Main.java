@@ -13,7 +13,7 @@ class People {
 	/** 
 		The array of Person objects
 	*/
-	public Person[] group;
+	protected Person[] group;
 	private int index;
 	
 	/**
@@ -129,6 +129,7 @@ class Person {
     return result;
   }
 }
+	
 
 
 /** Main class - contains entry point */
