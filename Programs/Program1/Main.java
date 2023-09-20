@@ -1,15 +1,13 @@
-package Programs.Program1;
-
 /**
  * Name: Aidan Schaubhut
- * Date: 9/11/2013
+ * Date: 9/11/2023
  * Description: A program that uses classes to create a person class and student subclass
  */
  
 /** Creates the super class called Person with input of name and age */
 class Person {
 
-  /* Variables */
+  /* Fields */
 
   private String name;
   private int age;
@@ -42,7 +40,7 @@ class Person {
       result += "not a student ";
     }
 
-    result += "and is " + Integer.toString(this.age) + " years old";
+    result += "and is " + this.age + " years old";
 
     return result;
   }
