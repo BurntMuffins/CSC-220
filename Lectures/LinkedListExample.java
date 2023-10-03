@@ -8,7 +8,7 @@ class Node {
 	}
 	
 	public String getData() { return data; }
-	public void setData() { this.data = data; }
+
 	
 	public Node getNext() {return link;}
 	public void setNext(Node node) {this.link = node;}

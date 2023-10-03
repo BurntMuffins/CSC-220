@@ -1,3 +1,4 @@
 *.class
 docs
 Test.java
+*.zip
