@@ -2,7 +2,7 @@ public class SortAlgs {
     public static void cocktailSort(Container[] list){
         int n = list.length;
 
-        for(int i = 1; i <= (n - 1) / 2 + 1; i++){
+        for(int i = 1; i < (n - 1) / 2 + 1; i++){
             // Up the list
             boolean anySwapsMade = false;
             for(int j = i; j < (n - 1); j++){
@@ -17,7 +17,7 @@ public class SortAlgs {
                 break;
             }
             anySwapsMade = false;
-            for(int j = (n - 1); j > (i - 1); j--){
+            for(int j = (n - i); j > (i - 1); j--){
                 if(list[j].getKey() < list[j - 1].getKey()){
                     Container temp = list[j];
                     list[j] = list[j-1];
