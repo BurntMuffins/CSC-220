@@ -1,10 +1,8 @@
-import java.awt.Container;
-
 public class SortAlgs {
     public static void cocktailSort(Container[] list){
         int n = list.length;
 
-        for(int i = 1; i <= (n - 1) / 2 + 1; i++){ // Probably where there is an issue
+        for(int i = 1; i <= (n - 1) / 2 + 1; i++){
             // Up the list
             boolean anySwapsMade = false;
             for(int j = i; j < (n - 1); j++){
@@ -97,14 +95,19 @@ public class SortAlgs {
         }
 
         // Allocate output array
-        int[] output = new int[n];
+        Container[] output = new Container[n];
 
         // copy to output array, keeping order of inputs with equal keys
-        for(int i = 0; i < 0; i++){
+        for(int i = 0; i < n; i++){
             Container value = list[i];
-            
+            output[count[value.getKey()]] = value;
+            count[value.getKey()] = count[value.getKey()] + 1;
         }
 
+        // copy back to original list
+        for(int i = 0; i < n; i++){
+            list[i] = output[i];
+        }
     }
 
     private static int max(Container[] list){
