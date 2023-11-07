@@ -1,3 +1,12 @@
+/**
+* Name: Aidan Schaubhut
+* Date: 11/1/2023
+* Description: Sorts a given list of Container objects. I FOUND THE BONUS
+*/
+
+// Add Comb, Merge, and Radix sorts 
+// YOU BETTER DO THIS YOU GET 24 POINTS BRUH
+
 public class SortAlgs {
     public static void cocktailSort(Container[] list){
         int n = list.length;
@@ -107,6 +116,83 @@ public class SortAlgs {
         // copy back to original list
         for(int i = 0; i < n; i++){
             list[i] = output[i];
+        }
+    }
+
+    public static void combSort(Container[] list){
+        int gap = list.length;
+        boolean swapsMade = false;
+        while(gap > 1){
+            gap = (int)(gap/1.3);
+
+            if(gap < 1){
+                gap = 1;
+            }
+
+            swapsMade = false;
+            for(int i = 0; i < list.length - gap; i++){
+                if(list[i].getKey() > list[i + gap].getKey()){
+                    Container val = list[i];
+                    list[i] = list[i + gap];
+                    list[i + gap] = val;
+                    swapsMade = true;
+                }
+            }
+            if(!swapsMade){
+                break;
+            }
+        }
+    }
+
+    public static void mergeSort(Container[] list){
+        int middle = list.length / 2;
+        Container[] leftList = new Container[middle];
+        Container[] rightList = new Container[list.length - middle];
+
+        if(list.length <= 1){
+            return;
+        }
+
+        for (int i = 0; i < middle; i++) {
+            leftList[i] = list[i];
+        }
+
+        for (int i = middle; i < list.length; i++) {
+            rightList[i - middle] = list[i];
+        }
+
+        mergeSort(leftList);
+        mergeSort(rightList);
+        mergeRecursive(list, leftList, rightList);
+    }
+
+    private static void mergeRecursive(Container[] list, Container[] left, Container[] right){
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int index = 0;
+
+        while(leftIndex < left.length && rightIndex < right.length){
+            if(left[leftIndex].getKey() <= right[rightIndex].getKey()){
+                left[index] = left[leftIndex];
+                leftIndex++;
+            } else {
+                left[index] = right[rightIndex];
+                rightIndex++;
+            }
+
+            index++;
+        }
+
+        while(leftIndex < left.length){
+            list[index] = left[leftIndex];
+            leftIndex++;
+            index++;
+        }
+
+        while (rightIndex < right.length) {
+            list[index] = right[rightIndex];
+            rightIndex++;
+            index++;
         }
     }
 
